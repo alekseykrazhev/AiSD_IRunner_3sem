@@ -1,3 +1,0 @@
-C:/Users/Alex/Desktop/AiSD_irunner_3sem/Recurrent/20.Palindrom/cmake-build-debug/CMakeFiles/20_Palindrom.dir
-C:/Users/Alex/Desktop/AiSD_irunner_3sem/Recurrent/20.Palindrom/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Alex/Desktop/AiSD_irunner_3sem/Recurrent/20.Palindrom/cmake-build-debug/CMakeFiles/rebuild_cache.dir
