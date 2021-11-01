@@ -1,91 +1,78 @@
 from queue import Queue
 import numpy as np
 
-def BFS(graph, vertex, n):
-    q = Queue()
-    visited = np.zeros(n+1)
-    left = []
-    q.put(vertex)
-    visited[0] = 1
-    visited[vertex] = 1
-    while not q.empty():
-        vert = q.get()
-        #print(vert, end='-->')
-        for u in graph[vert]:
-            if visited[u] != 1:
-                q.put(u)
-                visited[u] = 1
-    b = True
-    for i in range(n+1):
-        if visited[i] != 1:
-            left.append(i)
-            return left
-    return []
 
-def FillGraph(graph, n, i):
-    count = 0
-    if len(i) == 1:
-        m = i[0]
-    for u in range(1, n+1):
-        left = BFS(graph, u, n)
-        #print(left)
-        if len(left) != 0:
-            graph[u].append(m)
-            count += 1
+order = []
+component = []
 
-    return count
+
+def DFS1 (graph, v):
+    used[v] = True
+    for i in range (1, len(graph[v])):
+        if not used[graph[v][i]] and graph[v][i] != 0:
+            DFS1(graph, graph[v][i])
+    order.append(v)
+
+
+def DFS2 (v):
+    used[v] = True
+    component.append(v)
+    for i in range (0, len(transp[v])):
+        if not used[transp[v][i]]:
+            DFS2(transp[v][i])
+
 
 if __name__ == '__main__':
     fin = open('input.txt', 'r')
     fout = open('output.txt', 'w')
 
     n = int(fin.readline())
+    N = 101
     list = []
+    transp = [[] for i in range (n+1)]
     list.append([0])
 
     for i in range(n):
         l = [int(x) for x in fin.readline().split()]
         list.append(l)
+    
+    #print (list)
     fin.close()
+    #print (transp)
+    count = np.zeros(len(list), dtype = int)
 
-    #print(list)
-    m = len(list[1])
-    for j in range(1, n+1):
-        if len(list[j]) > m:
-            m = len(list[j])
-
-    i = []
-    for j in range(1, n+1):
-        if len(list[j]) == m:
-            i.append(j)
-
-    min_len = float('Inf')
-    min_indx = -1
-    min_left = []
-    for u in i:
-        left = BFS(list, u, n)
-        if len(left) == 0:
-            fout.write('1')
-            fout.write('\n')
-            fout.write(str(FillGraph(list, n, i)))
-            fout.close()
-            quit()
-
-        if len(left) < min_len:
-            min_len = len(left)
-            min_indx = u
-            min_left = left
-
-    indx = 0
-    count = 0
-    for i in list[indx]:
-        for j in min_left:
-            if j == i:
-                min_len -= 1
-                count += 1
-            if min_len <= 0:
-                break
-        indx += 1
+    for i in range (len(list)):
+        for j in range (len(list[i])):
+            count[list[i][j]] += 1
+            transp[list[i][j]].append(i)
         
-    fout.write(str(FillGraph(list, n, i)))
+    #print(count)
+
+    #print (transp)
+
+    ans1 = 1
+    for i in range(1, len(count)):
+        if count[i] == 0:
+            ans1 += 1
+
+    used = np.zeros(N, dtype = bool)
+    for i in range (1, n):
+        if not used[i]:
+            DFS1(list, i)
+
+    #print(order)
+    ans2 = 0
+    #used = np.zeros(N, N, dtype = bool)
+    used = np.zeros(N, dtype = bool)
+    for i in range (1, n):
+        v = order[n-1-i]
+        if not used[v]:
+            DFS2(v)
+            if  len(component) == 1:
+                ans2 += 1
+            component.clear()
+
+    fout.write(str(ans1))
+    fout.write('\n')
+    fout.write(str(ans2))
     fout.close()
