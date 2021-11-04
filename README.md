@@ -1,1 +1,2 @@
-# AiSD_irunner_3sem
+# AlgorithmsAndDS
+Algorithms and Data Structures | BSU | LABS
