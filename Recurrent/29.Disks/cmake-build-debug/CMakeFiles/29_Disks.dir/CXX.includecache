@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/lkr37/Desktop/study/AlgorithmsAndDS/Recurrent/29.Disks/main.cpp
+iostream
+-
+fstream
+-
+algorithm
+-
+vector
+-
+iomanip
+-
+

@@ -1,0 +1,3 @@
+C:/Users/lkr37/Desktop/study/AlgorithmsAndDS/Recurrent/29.Disks/cmake-build-debug/CMakeFiles/29_Disks.dir
+C:/Users/lkr37/Desktop/study/AlgorithmsAndDS/Recurrent/29.Disks/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lkr37/Desktop/study/AlgorithmsAndDS/Recurrent/29.Disks/cmake-build-debug/CMakeFiles/rebuild_cache.dir
