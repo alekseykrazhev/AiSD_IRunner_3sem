@@ -1,0 +1,3 @@
+C:/Users/lkr37/Desktop/study/AlgorithmsAndDS/Graphs/38.Settle/cmake-build-debug/CMakeFiles/38_Settle.dir
+C:/Users/lkr37/Desktop/study/AlgorithmsAndDS/Graphs/38.Settle/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lkr37/Desktop/study/AlgorithmsAndDS/Graphs/38.Settle/cmake-build-debug/CMakeFiles/rebuild_cache.dir
