@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/lkr37/Desktop/study/AlgorithmsAndDS/Graphs/0.8_DFS/main.cpp
+iostream
+-
+fstream
+-
+vector
+-
+sstream
+-
+string
+-
+queue
+-
+algorithm
+-
+
